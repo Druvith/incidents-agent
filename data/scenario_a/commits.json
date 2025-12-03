@@ -1,0 +1,26 @@
+[
+  {
+    "repository": "payment-service",
+    "commit_id": "8a1b2c",
+    "timestamp": "15:00:00",
+    "author": "junior_dev",
+    "message": "feat: added transaction history loop to user profile",
+    "files_changed": ["src/payments/history.py", "src/db/queries.py"]
+  },
+  {
+    "repository": "payment-service",
+    "commit_id": "7x9y8z",
+    "timestamp": "12:00:00",
+    "author": "senior_dev",
+    "message": "fix: updated readme and adjusted timeout config",
+    "files_changed": ["README.md", "config.yaml"]
+  },
+  {
+    "repository": "auth-service",
+    "commit_id": "1a2b3c",
+    "timestamp": "14:30:00",
+    "author": "admin",
+    "message": "chore: dependency update",
+    "files_changed": ["package.json"]
+  }
+]
