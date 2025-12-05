@@ -1,18 +1,18 @@
 import json
-import time
+from logging import log
 from typing import Dict, Optional
 import os
-import sys
 
 
 # where the mock data lives
 DATA_PATH = "data/scenario_a"
-def search_logs(level: str = "ERROR", limit: int = 5) -> list[Dict]:
+def search_logs(service: str, level: str = "ERROR", limit: int = 5) -> list[Dict]:
     """
     Simulates searching the recent logs for a given keyword.
     
     Args:
-    - keyword: The keyword to search for in the logs.
+    - service: The name of the service to filter logs (e.g., 'payment-service').
+    - level: The log level to filter by (e.g., 'ERROR', 'WARN').
     - limit: The maximum number of log entries to return.
     Returns:
     - a list of log entries containing the keyword.
@@ -24,15 +24,15 @@ def search_logs(level: str = "ERROR", limit: int = 5) -> list[Dict]:
             logs = json.load(f)
 
         matches = []
-        for log in logs:
-            if log.get("level", "").upper() == level.upper():
-                matches.append(log)
+        for entry in logs:
+            is_service = entry.get("service", "").lower() == service.lower()
+            is_level = entry.get("level", "").upper() == level.upper()
+            if is_service and is_level:
+                matches.append(entry)
         
         return matches[-limit:] if limit > 0 else matches
-    except FileNotFoundError:
-        return []
-    except json.JSONDecodeError:
-        return []
+    except Exception as e:
+        return [{"error": str(e)}]
     
 
 def get_recent_metrics(service_name: str, limit: int = 5) -> list[Dict]:

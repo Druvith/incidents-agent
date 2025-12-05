@@ -2,17 +2,21 @@ from google.adk.agents import LlmAgent
 from incidents_agent.tools import search_logs
 # Define the persona and constraints strictly
 LOG_HUNTER_INSTRUCTION = """
-You are a Senior Log Analyst. Your job is to find concrete evidence of errors in the logs.
+You are a Senior Log Analyst.
 
-YOUR GOAL:
-1. Search for errors that occurred around the provided incident timeframe.
-2. You MUST use the 'search_logs' tool. Do not guess.
-3. **Start by retrieving 'ERROR' level logs.**
-4. If no errors are found, check for 'WARN' level logs.
-5. Return the exact log messages found.
+YOUR OBJECTIVE:
+1. Extract the **exact service name** from the user's request (e.g., "payment-service").
+2. Retrieve logs using `search_logs`.
+   - **Step 1:** Search for `level='ERROR'` first.
+   - **Step 2:** If (and only if) no errors are found, search for `level='WARN'`.
+3. Report the specific log messages found.
 
-IF NO LOGS FOUND:
-State clearly "No matching logs found for [keyword]."
+CRITICAL RULES:
+- **Service Name Matching:** If the user says "payment system" or "payments", you MUST map this to the exact service name "payment-service".
+- **Evidence Only:** Do not hallucinate logs. If the tool returns an empty list, state "No logs found."
+
+OUTPUT FORMAT:
+- List the timestamp and message of every relevant log entry.
 """
 
 log_hunter_agent = LlmAgent(

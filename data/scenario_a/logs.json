@@ -2,26 +2,25 @@
   {
     "timestamp": "15:00:05",
     "level": "INFO",
+    "service": "payment-service",
     "msg": "Deployment finished successfully. Version: v2.4.1"
-  },
-  {
-    "timestamp": "15:02:10",
-    "level": "INFO",
-    "msg": "Processing payment batch #9921"
   },
   {
     "timestamp": "15:05:01",
     "level": "WARN",
+    "service": "payment-service",
     "msg": "Query execution time exceeded 1000ms in GetUserHistory"
   },
   {
     "timestamp": "15:05:05",
     "level": "ERROR",
-    "msg": "ConnectionTimeout: DB Connection Pool exhausted. Max connections (50) reached."
+    "service": "payment-service",
+    "msg": "ConnectionTimeout: DB Connection Pool exhausted."
   },
   {
-    "timestamp": "15:05:15",
+    "timestamp": "15:05:05",
     "level": "ERROR",
-    "msg": "TransactionFailedException: Unable to acquire lock on table 'users'"
+    "service": "auth-service", 
+    "msg": "Token validation failed (Unrelated noise)" 
   }
 ]
