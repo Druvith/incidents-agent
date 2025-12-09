@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project demonstrates how to build a multi-agent system for automated incident response using Google's Agent Development Kit (ADK). It simulates a team of agents that work together to diagnose the root cause of a technical incident by analyzing logs, metrics, and recent code changes.
+This project demonstrates how to build a multi-agent system for automated incident response using Google's Agent Development Kit (ADK). It simulates a team of agents that work together to diagnose the root cause of a (mock) technical incident by analyzing logs, metrics, and recent code changes.
 
 ## Capabilities
 
@@ -11,8 +11,6 @@ This project demonstrates how to build a multi-agent system for automated incide
   - **Metrics Investigator**: Fetches recent performance metrics.
   - **Commits Investigator**: Looks up recent code deployments.
 - **Sequential Analysis**: A `SequentialAgent` receives the collected data, correlates the findings, and generates a root-cause analysis report with a confidence score.
-- **Dynamic Scenarios**: The data path is configurable via an environment variable, allowing you to easily switch between different incident scenarios without changing the code.
-
 
 ## Getting Started
 
@@ -61,4 +59,4 @@ For more information on building agents and tools with the ADK, please refer to 
 
 This project is built with the help of these amazing technologies:
 - Google's Agent Development Kit (ADK)
-- Gemini
+- Gemini 
