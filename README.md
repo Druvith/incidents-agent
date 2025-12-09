@@ -25,8 +25,9 @@ This project demonstrates how to build a multi-agent system for automated incide
 
 1.  **Clone the repository:**
     ```sh
-    git clone <your-repository-url>
-    cd <repository-name>
+    git clone https://github.com/Druvith/incidents-agent.git
+    cd incidents-agent
+
     ```
 
 2.  **Create a virtual environment and install dependencies:**
