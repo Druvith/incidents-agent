@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "09:55:00",
+    "level": "INFO",
+    "service": "payment-service",
+    "msg": "Health check passed."
+  },
+  {
+    "timestamp": "10:00:05",
+    "level": "ERROR",
+    "service": "payment-service",
+    "msg": "UpstreamTimeoutException: Connection to https://api.stripe-mock.com timed out after 5000ms."
+  },
+  {
+    "timestamp": "10:00:15",
+    "level": "WARN",
+    "service": "payment-service",
+    "msg": "CircuitBreaker: 'payment-gateway' is OPEN. Fast-failing requests."
+  },
+  {
+    "timestamp": "10:01:00",
+    "level": "ERROR",
+    "service": "payment-service",
+    "msg": "PaymentProcessingFailed: Unable to reach provider."
+  }
+]

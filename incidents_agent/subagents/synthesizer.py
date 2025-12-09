@@ -26,7 +26,7 @@ If the agents returned "No data" or "Healthy", report that the system is stable.
 
 synthesizer_agent = LlmAgent(
     name='incident_commander',
-    model='gemini-2.5-pro',
+    model='gemini-2.5-flash',
     description='Synthesizes technical data into a final Root Cause Analysis report.',
     instruction=SYNTHESIZER_INSTRUCTION,
     output_key='incident_report'

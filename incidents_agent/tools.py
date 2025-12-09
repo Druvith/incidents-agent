@@ -5,7 +5,8 @@ import os
 
 
 # where the mock data lives
-DATA_PATH = "data/scenario_a"
+# The data path can be overridden by setting the INCIDENT_DATA_PATH environment variable.
+DATA_PATH = os.environ.get("INCIDENT_DATA_PATH", "data/scenario_a")
 def search_logs(service: str, level: str = "ERROR", limit: int = 5) -> list[Dict]:
     """
     Simulates searching the recent logs for a given keyword.

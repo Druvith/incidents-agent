@@ -1,0 +1,30 @@
+[
+  {
+    "service_name": "payment-service",
+    "timestamp": "09:50:00",
+    "latency_ms": 150,
+    "error_rate": 0.0,
+    "cpu_usage": 10
+  },
+  {
+    "service_name": "payment-service",
+    "timestamp": "09:55:00",
+    "latency_ms": 160,
+    "error_rate": 0.0,
+    "cpu_usage": 11
+  },
+  {
+    "service_name": "payment-service",
+    "timestamp": "10:00:00",
+    "latency_ms": 5200,
+    "error_rate": 25.0,
+    "cpu_usage": 12
+  },
+  {
+    "service_name": "payment-service",
+    "timestamp": "10:05:00",
+    "latency_ms": 5100,
+    "error_rate": 40.0,
+    "cpu_usage": 12
+  }
+]
